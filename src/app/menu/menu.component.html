@@ -1,0 +1,134 @@
+
+<nav class="navbar navbar-expand-md navbar-light justify-content-between">
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link text-danger" href="/menu#veg">Veg Pizza</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="/menu#nonVeg">Non-Veg Pizza</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="/menu#toppings">Toppings</a></li>
+    </ul>    
+</nav>
+
+<form>
+    <div id="veg">
+        <!--<mat-card>-->
+        <!--    <mat-card-header>-->
+                <h1>Veg Pizza</h1>        
+            <!--</mat-card-header>-->
+            <!--<mat-card-content>-->
+                <table>
+                    <tr>
+                        <td><label #v1>Margherita</label></td>
+                        <td><input type="number" id="veg1" #veg1 min="0"></td>
+                        <!--<td><button id="btn1"  color="accent"  type="button" (click)="addItem('Margherita',veg1.value)">-->
+                        <td><button id="btn3"  color="accent" type="button" (click)="addItem(v1.outerText, veg1.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td><label #v2>Double Cheese Margherita</label></td>
+                        <td><input type="number" id="veg2" #veg2 min="0"></td>
+                        <!--<td><button id="btn2"  color="accent" type="button" (click)="addItem(v2.outerText, veg2.value)">-->
+                        <td><button id="btn2"  color="accent" type="button" (click)="addItem('Double Cheese Margherita', veg2.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td><label #v3>Peppy Panner</label></td>
+                        <td><input type="number" id="veg3" #veg3 min="0"></td>
+                        <td><button id="btn3"  color="accent" type="button" (click)="addItem(v3.outerText, veg3.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td><label #v4>Cheese and Corn</label></td>
+                        <td><input type="number" id="veg4" #veg4 min="0"></td>
+                        <td><button id="btn4"  color="accent" type="button" (click)="addItem('Cheese and Corn', veg4.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                </table>
+        <!--    </mat-card-content>-->
+        <!--</mat-card>-->
+    </div>
+    
+    <div id="nonVeg">
+        <!--<mat-card>-->
+        <!--    <mat-card-header>-->
+                <h1>Non-Veg Pizza</h1>
+            <!--</mat-card-header>-->
+            <!--<mat-card-content>-->
+                <table>
+                    <tr>
+                        <td><label #nv1>Chicken Golden Delight</label></td>
+                        <td><input type="number" id="nonVeg1" #nonVeg1 min="0"></td>
+                        <td><button id="btn5"  color="accent" type="button" (click)="addItem('Chicken Golden Delight', nonVeg1.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td><label #nv2>Non Veg Supreme</label></td>
+                        <td><input type="number" id="nonVeg2" #nonVeg2 min="0"></td>
+                        <td><button id="btn6"  color="accent" type="button" (click)="addItem(nv2.outerText, nonVeg2.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td><label #nv3>Chicken Dominator</label></td>
+                        <td><input type="number" id="nonVeg3" #nonVeg3 min="0"></td>
+                        <td><button id="btn7"  color="accent" type="button" (click)="addItem(nv3.outerText, nonVeg3.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td><label #nv4>Chicken Pepperoni</label></td>
+                        <td><input type="number" id="nonVeg4" #nonVeg4 min="0"></td>
+                        <td><button id="btn8"  color="accent" type="button" (click)="addItem(nv4.outerText, nonVeg4.value)">
+                            <!--<mat-icon>add</mat-icon>-->+
+                        </button></td>
+                    </tr>
+                </table>                
+        <!--    </mat-card-content>-->
+        <!--</mat-card>-->
+    
+    </div>
+
+    <div id="toppings">
+        <!--<mat-card>-->
+        <!--    <mat-card-header>-->
+                <h1>Toppings</h1>
+            <!--</mat-card-header>-->
+            <!--<mat-card-content>-->
+                <table>
+                    <tr>
+                        <th>Veg Toppings</th>
+                        <td>
+                            <input type="checkbox" id="vt1">Black Olives |
+                            <input type="checkbox" id="vt2">Mushroom |
+                            <input type="checkbox" id="vt3">Babycorn |
+                            <input type="checkbox" id="vt4">Panner |
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Extra Cheese</th>
+                        <td>
+                            <input type="checkbox" id="cheese1">Mozzarella | 
+                            <input type="checkbox" id="cheese2">Pecorino |
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Non-Veg Toppings</th>
+                        <td>
+                            <input type="checkbox" id="nv1">Hot and Spicy |
+                            <input type="checkbox" id="nv2">BBQ Chicken |
+                            <input type="checkbox" id="nv3">Chunk Chicken |
+                        </td>   
+                    </tr>
+                </table>
+        <!--    </mat-card-content>-->
+        <!--</mat-card>-->
+    
+        
+        
+    </div>
+
+    <!-- <button type="button" (click)="viewOrder()">View</button> -->
+</form>	 	  	  	 			  	   	 	

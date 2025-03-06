@@ -1,0 +1,31 @@
+h1 {
+    font-variant: small-caps;
+    font-family: Georgia;
+    color: #FBEEC1;
+    font-size: 40px;
+    text-shadow: 3px 2px #FF0000;
+}
+
+nav {
+    background-color: #55bcc9;
+}
+
+li{
+    font-size: 18px;
+    float: left
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a {
+    display: block;
+    color: #652959;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}	 
