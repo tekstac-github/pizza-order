@@ -16,13 +16,12 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    npm install @angular-devkit/build-angular --save-dev
-                    npm install typescript@4.7.4 --save-dev
+                    npm ci
                 '''
             }
         }
 
-        stage('Build AngularApp') {
+        stage('Build PizzaOrder') {
             steps {
                 sh 'ng build --configuration production --output-path=dist/angular-app'
             }
@@ -31,6 +30,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 sh 'ng test --watch=false --browsers=ChromeHeadless'
+                junit 'coverage/**/TEST-*.xml'
             }
         }
 
@@ -39,6 +39,12 @@ pipeline {
                 sh '''
                     sudo npm start --silent &
                 '''
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh 'sudo kill $(lsof -t -i:4200) || true'
             }
         }
     }
