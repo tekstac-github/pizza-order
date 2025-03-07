@@ -18,8 +18,7 @@ pipeline {
                 sh '''
                     npm ci
                     npm install @types/node@18.16.19 --save-dev
-                    npm install karma-junit-reporter --save-dev
-                '''
+                    '''
             }
         }
 
@@ -31,9 +30,8 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                sh 'ng test --watch=false --browsers=ChromeHeadless --reporters=junit --outputFile=reports/junit/test-results.xml'
-                junit 'reports/junit/*.xml'
-            }
+                sh 'ng test --watch=false --browsers=ChromeHeadless'
+                }
         }
 
         stage('Serve Application') {
