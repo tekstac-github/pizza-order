@@ -31,8 +31,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 sh 'ng test --watch=false --browsers=ChromeHeadless'
-                junit 'coverage/**/TEST-*.xml'
-            }
+                }
         }
 
         stage('Serve Application') {
