@@ -18,20 +18,22 @@ pipeline {
                 sh '''
                     npm ci
                     npm install @types/node@18.16.19 --save-dev
+                    npm install karma-junit-reporter --save-dev
                 '''
             }
         }
 
         stage('Build PizzaOrder') {
             steps {
-                sh 'ng build --configuration production --output-path=dist/angular-app'
+                sh 'ng build --configuration production --output-path=dist/pizza-order'
             }
         }
 
         stage('Run Unit Tests') {
             steps {
-                sh 'ng test --watch=false --browsers=ChromeHeadless'
-                }
+                sh 'ng test --watch=false --browsers=ChromeHeadless --reporters=junit --outputFile=reports/junit/test-results.xml'
+                junit 'reports/junit/*.xml'
+            }
         }
 
         stage('Serve Application') {
@@ -39,12 +41,6 @@ pipeline {
                 sh '''
                     sudo npm start --silent &
                 '''
-            }
-        }
-
-        stage('Cleanup') {
-            steps {
-                sh 'sudo kill $(lsof -t -i:4200) || true'
             }
         }
     }
