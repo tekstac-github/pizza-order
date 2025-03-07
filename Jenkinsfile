@@ -17,6 +17,7 @@ pipeline {
             steps {
                 sh '''
                     npm ci
+                    npm install @types/node@18.16.19 --save-dev
                 '''
             }
         }
